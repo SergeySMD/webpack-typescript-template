@@ -1,18 +1,26 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "target": "ESNext",
-    "sourceMap": true,
-    "baseUrl": "src",
-    "paths": { 
-      "@/*": ["*"],
-      "assets/*":["./assets"]
+    "compilerOptions": {
+        // "baseUrl": "src",
+        "outDir": "./build",
+        "target": "es5",
+        "module": "esnext",
+        "types": ["node"],
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "jsx": "react",
+        "moduleResolution": "node",
+        "allowJs": false,
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": false,
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+        "noFallthroughCasesInSwitch": true,
+        "downlevelIteration": true
     },
-    "typeRoots": ["./src/@types", "./node_modules/@types"]
-  },
-  "include": ["src"]
+    "include": ["src"],
+    "exclude": ["node_modules", "build"]
 }

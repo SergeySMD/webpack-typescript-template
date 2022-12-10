@@ -1,0 +1,23 @@
+.home-container {
+  display: flex;
+  width: 100%;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.home-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

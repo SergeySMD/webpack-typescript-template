@@ -1,0 +1,32 @@
+.users-container {
+  display: flex;
+  width: 50%;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-item {
+  padding: 20px;
+  border: 1px solid blue;
+  font-size: 16px;
+  width: 100%;
+}
+.buttons-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

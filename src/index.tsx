@@ -1,7 +1,22 @@
-import * as React from "react";
-import App from "./components/App";
-import { createRoot } from "react-dom/client";
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import ReactDOM from 'react-dom';
 
-const container = document.getElementById("root");
-const root = createRoot(container!);
-root.render(<App />);
+import './i18next';
+import { setupStore } from './store/store';
+import Loader from './components/loader/Loader';
+
+const App = lazy(() => import(/* webpackChunkName: "app-context" */ './App'));
+const store = setupStore();
+
+ReactDOM.render(
+  <Router>
+    <Provider store={store}>
+      <Suspense fallback={<Loader />}>
+        <App />
+      </Suspense>
+    </Provider>
+  </Router>,
+  document.getElementById('root')
+);

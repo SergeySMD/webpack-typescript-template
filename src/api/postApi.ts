@@ -1,19 +1,20 @@
-import { IPost } from '../models/posts';
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
+
+import { IPost } from "../interfaces/posts";
 
 const postAPI = createApi({
-  reducerPath: 'postsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com' }),
-  tagTypes: ['Post'],
+  reducerPath: "postsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://jsonplaceholder.typicode.com" }),
+  tagTypes: ["Post"],
   endpoints: (build) => ({
     getPosts: build.query<IPost[], number>({
       query: (limit = 5) => ({
-        url: `/post2s`,
+        url: `/posts`,
         params: {
           _limit: limit,
         },
       }),
-      providesTags: () => ['Post'],
+      providesTags: () => ["Post"],
     }),
     // createPost: build.mutation<IPost, IPost>({
     //     query: (post) => ({

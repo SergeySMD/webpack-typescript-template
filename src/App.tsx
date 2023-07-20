@@ -1,9 +1,7 @@
-import { Navigate, Route, Routes } from 'react-router';
-import React, { FC, Suspense } from 'react';
+import React, { FC, Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router";
 
-import Paths from './constants/path';
-
-import routes from './routes';
+import { routes, paths } from "./routes";
 
 const App: FC = () => {
   return (
@@ -21,7 +19,7 @@ const App: FC = () => {
           />
         ))}
 
-        <Route element={<Navigate replace to={Paths.HOME} />} path="*" />
+        <Route element={<Navigate replace to={paths.HOME} />} path="*" />
       </Routes>
     </div>
   );

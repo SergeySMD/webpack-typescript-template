@@ -1,6 +1,10 @@
-import { IUser } from '../../models/users';
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { getUsers } from './ActionCreators';
+import { createSlice } from "@reduxjs/toolkit";
+
+import { IUser } from "@interfaces/users";
+
+import type { PayloadAction } from "@reduxjs/toolkit";
+
+import { getUsers } from "./ActionCreators";
 
 interface UserState {
   users: IUser[];
@@ -12,12 +16,12 @@ interface UserState {
 const initialState: UserState = {
   users: [],
   isLoading: false,
-  error: '',
+  error: "",
   limit: 10,
 };
 
 export const usersReducer = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {
     setUsersLimit: (state, action: PayloadAction<number>) => {
@@ -27,7 +31,7 @@ export const usersReducer = createSlice({
   extraReducers: {
     [getUsers.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
       state.isLoading = false;
-      state.error = '';
+      state.error = "";
       state.users = action.payload;
     },
     [getUsers.pending.type]: (state) => {

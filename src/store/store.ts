@@ -1,7 +1,8 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { postsReducer } from './reducers/posts';
-import { usersReducer } from './reducers/users';
-import postAPI from '../api/postApi';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+
+import postAPI from "@api/postApi";
+import { postsReducer } from "@reducers/posts";
+import { usersReducer } from "@reducers/users";
 
 const rootReducer = combineReducers({
   [usersReducer.name]: usersReducer.reducer,
@@ -17,4 +18,4 @@ export const setupStore = () => {
 };
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
-export type AppDispatch = AppStore['dispatch'];
+export type AppDispatch = AppStore["dispatch"];

@@ -1,25 +1,24 @@
-import './styles.scss';
-import { Link } from 'react-router-dom';
-import { getUsers } from '../../store/reducers/ActionCreators';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { useTranslation } from 'react-i18next';
-import { usersReducer } from '../../store/reducers/users';
-import Loader from '../../components/loader/Loader';
-import Paths from '../../constants/path';
-import React, { useEffect } from 'react';
+import "./styles.scss";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import Loader from "@components/loader/Loader";
+import { getUsers } from "@reducers/ActionCreators";
+import { usersReducer } from "@reducers/users";
+import { paths } from "@root/routes";
+import { useAppDispatch, useAppSelector } from "@utils/hooks/redux";
 
 function Users() {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { users, limit, isLoading, error } = useAppSelector((state) => state.users);
   const { setUsersLimit } = usersReducer.actions;
 
   useEffect(() => {
     dispatch(getUsers(limit));
-  }, [limit]);
+  }, [dispatch, limit]);
 
   const handleChangeLimit = () => {
-    const count = prompt(t('enter-count'), limit as unknown as string);
+    const count = prompt("Введите количество", limit as unknown as string);
     if (count && parseInt(count)) {
       dispatch(setUsersLimit(parseInt(count)));
     }
@@ -28,11 +27,11 @@ function Users() {
   return (
     <div className="users-container">
       <div className="buttons-list">
-        <Link className="button" to={Paths.HOME}>
-          {t('buttons.go-home')}
+        <Link className="button" to={paths.HOME}>
+          Домой
         </Link>
         <button className="button" onClick={handleChangeLimit}>
-          {t('buttons.change-limit')}
+          Изменить количество
         </button>
       </div>
       {isLoading && <Loader />}

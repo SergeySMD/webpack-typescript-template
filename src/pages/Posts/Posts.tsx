@@ -1,22 +1,21 @@
-import './styles.scss';
-import { Link } from 'react-router-dom';
-import { postsReducer } from '../../store/reducers/posts';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { useTranslation } from 'react-i18next';
-import Loader from '../../components/loader/Loader';
-import Paths from '../../constants/path';
-import React from 'react';
-import postAPI from '../../api/postApi';
+import "./styles.scss";
+import React from "react";
+import { Link } from "react-router-dom";
+
+import postAPI from "@api/postApi";
+import Loader from "@components/loader/Loader";
+import { postsReducer } from "@reducers/posts";
+import { paths } from "@root/routes";
+import { useAppDispatch, useAppSelector } from "@utils/hooks/redux";
 
 function Posts() {
-  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const limit = useAppSelector((state) => state.posts.limit);
   const setPostsLimit = postsReducer.actions.setPostsLimit;
   const { data, isLoading, isError, refetch } = postAPI.useGetPostsQuery(limit);
 
   const handleChangeLimit = () => {
-    const count = prompt(t('enter-count'), limit as unknown as string);
+    const count = prompt("Введите число", limit as unknown as string);
     if (count && parseInt(count)) {
       dispatch(setPostsLimit(parseInt(count)));
     }
@@ -25,18 +24,18 @@ function Posts() {
   return (
     <div className="users-container">
       <div className="buttons-list">
-        <Link className="button" to={Paths.HOME}>
-          {t('buttons.go-home')}
+        <Link className="button" to={paths.HOME}>
+          Домой
         </Link>
         <button className="button" onClick={handleChangeLimit}>
-          {t('buttons.change-limit')}
+          Изменить количество
         </button>
         <button className="button" onClick={() => refetch()}>
-          {t('buttons.refresh')}
+          Обновить
         </button>
       </div>
       {isLoading && <Loader />}
-      {isError && <b>{t('loading-error')}</b>}
+      {isError && <b>Ошибка</b>}
       {!isLoading &&
         data?.map((el) => (
           <div key={el.id} className="user-item">

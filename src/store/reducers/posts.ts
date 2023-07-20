@@ -1,4 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
+
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface UserState {
   limit: number;
@@ -9,7 +11,7 @@ const initialState: UserState = {
 };
 
 export const postsReducer = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     setPostsLimit: (state, action: PayloadAction<number>) => {

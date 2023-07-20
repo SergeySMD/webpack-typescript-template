@@ -1,10 +1,8 @@
-import { LazyExoticComponent, ReactNode, lazy } from 'react';
+import { LazyExoticComponent, ReactNode, lazy } from "react";
 
-import Paths from './constants/path';
-
-const Home = lazy(() => import('./pages/Home/Home'));
-const Users = lazy(() => import('./pages/Users/Users'));
-const Posts = lazy(() => import('./pages/Posts/Posts'));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Users = lazy(() => import("./pages/Users/Users"));
+const Posts = lazy(() => import("./pages/Posts/Posts"));
 
 type TRoute = {
   name: string;
@@ -13,25 +11,29 @@ type TRoute = {
   Fallback: ReactNode | null;
 };
 
-const routes = [
+export const paths = {
+  HOME: "/",
+  USERS: "/users",
+  POSTS: "/posts",
+};
+
+export const routes = [
   {
-    name: 'home',
-    path: Paths.HOME,
+    name: "home",
+    path: paths.HOME,
     Component: Home,
     Fallback: null,
   },
   {
-    name: 'users',
-    path: Paths.USERS,
+    name: "users",
+    path: paths.USERS,
     Component: Users,
     Fallback: null,
   },
   {
-    name: 'posts',
-    path: Paths.POSTS,
+    name: "posts",
+    path: paths.POSTS,
     Component: Posts,
     Fallback: null,
   },
 ] as TRoute[];
-
-export default routes;

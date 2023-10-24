@@ -2,20 +2,19 @@ import "./styles.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import postAPI from "@api/postApi";
+import { useGetPostsQuery } from "@api/postApi";
 import Loader from "@components/loader/Loader";
-import { postsReducer } from "@reducers/posts";
+import { setPostsLimit } from "@reducers/posts";
 import { paths } from "@root/routes";
 import { useAppDispatch, useAppSelector } from "@utils/hooks/redux";
 
 function Posts() {
   const dispatch = useAppDispatch();
   const limit = useAppSelector((state) => state.posts.limit);
-  const setPostsLimit = postsReducer.actions.setPostsLimit;
-  const { data, isLoading, isError, refetch } = postAPI.useGetPostsQuery(limit);
+  const { data, isLoading, isError, refetch } = useGetPostsQuery(limit);
 
   const handleChangeLimit = () => {
-    const count = prompt("Введите число", limit as unknown as string);
+    const count = prompt("Введите число", limit.toString());
     if (count && parseInt(count)) {
       dispatch(setPostsLimit(parseInt(count)));
     }

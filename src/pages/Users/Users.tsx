@@ -4,21 +4,20 @@ import { Link } from "react-router-dom";
 
 import Loader from "@components/loader/Loader";
 import { getUsers } from "@reducers/ActionCreators";
-import { usersReducer } from "@reducers/users";
+import { setUsersLimit } from "@reducers/users";
 import { paths } from "@root/routes";
 import { useAppDispatch, useAppSelector } from "@utils/hooks/redux";
 
 function Users() {
   const dispatch = useAppDispatch();
   const { users, limit, isLoading, error } = useAppSelector((state) => state.users);
-  const { setUsersLimit } = usersReducer.actions;
 
   useEffect(() => {
     dispatch(getUsers(limit));
   }, [dispatch, limit]);
 
   const handleChangeLimit = () => {
-    const count = prompt("Введите количество", limit as unknown as string);
+    const count = prompt("Введите количество", limit.toString());
     if (count && parseInt(count)) {
       dispatch(setUsersLimit(parseInt(count)));
     }

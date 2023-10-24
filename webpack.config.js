@@ -1,6 +1,5 @@
 const path = require("path");
 
-const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -28,27 +27,18 @@ module.exports = (env, { mode }) => {
       new MiniCssExtractPlugin({
         filename: isProduction ? "[name]-[contenthash].css" : "[name].css",
       }),
-      // new CopyPlugin({
-      //   patterns: [
-      //     { from: "src/assets/images/og.jpg", to: "" },
-      //     { from: "src/assets/docs", to: "docs" },
-      //   ],
-      // }),
     ],
 
     module: {
       rules: [
         {
-          test: /\.(ts|tsx)?$/,
-          use: "ts-loader",
-          exclude: /node_modules/,
-        },
-        {
-          test: /\.?js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: "babel-loader",
+          test: /\.(js|jsx|ts|tsx)?$/,
+          loader: "esbuild-loader",
+          options: {
+            loader: "tsx",
+            target: "es2015",
           },
+          exclude: /node_modules/,
         },
         {
           test: /\.(png|jp(e*)g|gif|webp|avif|webm)$/,
@@ -101,6 +91,7 @@ module.exports = (env, { mode }) => {
         "@components": path.resolve(__dirname, "./src/components"),
         "@interfaces": path.resolve(__dirname, "./src/interfaces"),
         "@pages": path.resolve(__dirname, "./src/pages"),
+        "@styles": path.resolve(__dirname, "./src/styles"),
         "@utils": path.resolve(__dirname, "./src/utils"),
         "@reducers": path.resolve(__dirname, "./src/store/reducers"),
       },

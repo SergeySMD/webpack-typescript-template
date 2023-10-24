@@ -1,3 +1,6 @@
+@import '@styles/variables';
+@import '@styles/themes';
+
 .users-container {
   display: flex;
   width: 50%;
@@ -9,9 +12,9 @@
   margin-right: auto;
 }
 .user-item {
+  @include card-label;
   padding: 20px;
-  border: 1px solid blue;
-  font-size: 16px;
+  border: 1px solid $secondary;
   width: 100%;
 }
 .buttons-list {
@@ -20,7 +23,7 @@
   justify-content: space-between;
 }
 .button {
-  background-color: blue;
+  background-color: $main;
   border: none;
   color: white;
   padding: 15px 32px;

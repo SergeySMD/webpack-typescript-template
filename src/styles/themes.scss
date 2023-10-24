@@ -1,0 +1,10 @@
+@import '@styles/variables';
+
+@mixin card-label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  font-family: sans-serif;
+  font-style: normal;
+  color: $text-main;
+}

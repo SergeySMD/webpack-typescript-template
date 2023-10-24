@@ -19,3 +19,4 @@ export const postsReducer = createSlice({
     },
   },
 });
+export const { setPostsLimit } = postsReducer.actions;

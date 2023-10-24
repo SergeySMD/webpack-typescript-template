@@ -43,3 +43,5 @@ export const usersReducer = createSlice({
     },
   },
 });
+
+export const { setUsersLimit } = usersReducer.actions;

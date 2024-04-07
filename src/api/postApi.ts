@@ -1,5 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IPost } from "../interfaces/posts";
 
 const postAPI = createApi({

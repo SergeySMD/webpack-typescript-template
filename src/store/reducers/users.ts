@@ -28,19 +28,20 @@ export const usersReducer = createSlice({
       state.limit = action.payload;
     },
   },
-  extraReducers: {
-    [getUsers.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
-      state.isLoading = false;
-      state.error = "";
-      state.users = action.payload;
-    },
-    [getUsers.pending.type]: (state) => {
-      state.isLoading = true;
-    },
-    [getUsers.rejected.type]: (state, action: PayloadAction<string>) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getUsers.fulfilled.type, (state, action: PayloadAction<IUser[]>) => {
+        state.isLoading = false;
+        state.error = "";
+        state.users = action.payload;
+      })
+      .addCase(getUsers.pending.type, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getUsers.rejected.type, (state, action: PayloadAction<string>) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 

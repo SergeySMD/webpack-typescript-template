@@ -1,0 +1,1 @@
+export type { IMenuItem } from './routing'

@@ -1,0 +1,248 @@
+// theme colors
+$brand-color: #56bdff;
+$muted-color: #e3e1f3;
+$background-color: #f7f7fb;
+$badge-background: #eb5757;
+$dark: #15122f;
+$primary: #656289;
+$white: #fff;
+$blue: #3f75ff;
+$blue-active: #233de0;
+$dodgerBlue: #1890ff;
+$lightGray: #9c9d9e;
+$disabled: #f9f9f9;
+$darkGray: #7a7a7c;
+$middleGray: #7a7a7a;
+$light: #eee;
+$blueNormal: #6177ff;
+$blueExtraLight: #f8faff;
+$boxShadowBase: 0 0 24px rgba(213, 220, 235, 0.3);
+$black: #000;
+$scorpion: #595959;
+$lightGrey: #fafafa;
+$indigoCryola: #5466d2;
+$blueCyan: #99a7f9;
+$primary-black: #121212;
+$border-main-grey: #d9d9d9;
+$secondaryDark: #717171;
+$colorPoints: #9149ff;
+$colorBorderBtn: #4d66ff;
+$secondaryLight: #f6f6f6;
+$primaryDarkGrey: #70707c;
+$monochromeDefault: #8c8c99;
+$greyMonochromeLight: #e9e9ed;
+$greyMonochromeDefault: #c1c1cd;
+$newMonochromeDefault: #b4b4bf;
+$tertiaryPrimary: #f0f3fd;
+$tertiaryPrimaryHover: #c4ccfa;
+$deleteColor: #d24600;
+$deleteHoverColor: #e6737b;
+$textError: #ee0019;
+$secondaryHoverLightBlue: #d6ddff;
+$secondaryHoverBlue: #6c82ff;
+// steps colors
+$primary-steps: #4e64f6;
+
+// text colors
+$muted-text-color: #a2a1bb;
+$dark-text: #15122f;
+$primary-text: #656289;
+$primary-hover: #6c82ff;
+$error-text: #db4444;
+$dark-error-text: #da453f;
+$black-text: #000;
+$link: #3969e6;
+$darkGray: #7a7a7c;
+$bgGray: #f4f4f6;
+$lightGray: #9c9d9e;
+$skyBlue: #f2f5fe;
+$blueNormal: #6177ff;
+$blueDark: #2c386b;
+$blueDisabled: #d5dceb;
+$blueHover: #788bfb;
+$blueLight: #dce8ff;
+$orange: #ff8515;
+$green: #7ab718;
+$gray: #c6c6c6;
+$bgWarning: #fcf1eb;
+$highlighted-text: rgba(247, 222, 10, .2);
+
+// main theme
+$main: #0a2750;
+$secondary: #3579b8;
+$third: #a9c9e7;
+$fourth: #dff0ff;
+$background: #f7f7fb;
+$error: #eb5757;
+$accent: #3f75ff;
+
+$grey: #828282;
+$whiteGrey: #eee;
+$secondaryAccent: #3579b8;
+$greyLight: #f9f9f9;
+
+// Menu / Header
+$sidebarWidth: 288px;
+$sidebarMinWidth: 80px;
+$containerPX: 60px;
+$headerHeight: 76px;
+$leftMenuHeight: 841px;
+$headerHeightMobile: 64px;
+$bannerHeaderHeight: 56px;
+$red: #db4444;
+$blue_0: #344883;
+$blue_divider: #526396;
+$neutralLight: #d1d1d9;
+$statusError: #cc111c;
+$warningText: #8c7e7e;
+$errorText: #8c7e7f;
+$statusWarning: #8c827e;
+
+// Footer
+$heightFooter: 449px;
+$heightFooterSecondary: 567px;
+
+// Borders
+$border-radius-32: 32px;
+$borderRadius-4: 4px;
+$borderRadius-8: 8px;
+
+//Font weight
+$bold: 700;
+$semiBold: 600;
+$medium: 500;
+$regular: 400;
+
+// Spacers:
+
+.spacerM3 {
+  margin-bottom: 24px;
+}
+
+// TODO: colors for hard code (services cards)
+// card theme (main)
+$backgroundCard: #f7fbff;
+$backgroundShadedCard: #f6fbff;
+$boxShadow:
+  0 1px 2px rgba(68, 68, 68, 0.12),
+  0 4px 8px rgba(34, 34, 34, 0.1),
+  inset 0 1px 1px rgba(68, 68, 68, 0.04);
+
+// table theme
+$backgroundTableHeader: #f8faff;
+
+// Company page
+$maxWidthContainerCompany: 904px;
+
+$boxShadowColor: rgba(32, 28, 77, 0.16);
+
+%shadowContainer {
+  box-shadow: $boxShadowBase;
+  border: 1px solid $whiteGrey;
+}
+
+// mixins
+@mixin setFont($size: 12px, $lineHeight: 16px, $weight: normal, $color: $darkGray) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+
+  line-height: $lineHeight;
+  color: $color;
+}
+
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border($width: 1px, $color: $blueDisabled) {
+  border: $width solid $color;
+}
+
+//adaptive mixins
+$break-1980: 1980px;
+$break-1760: 1760px;
+$break-1583: 1583px;
+$break-1440: 1440px;
+$break-1400: 1400px;
+$break-1366: 1366px;
+$break-1300: 1300px;
+$break-1200: 1200px;
+$break-1280: 1280px;
+$break-1024: 1024px;
+$break-1000: 1000px;
+$break-997: 997px;
+$break-996: 996px;
+$break-992: 992px;
+$break-970: 970px;
+$break-901: 901px;
+$break-900: 900px;
+$break-960: 960px;
+$break-768: 768px;
+$break-668: 668px;
+$break-667: 667px;
+$break-600: 600px;
+$break-450: 450px;
+$break-449: 449px;
+$break-430: 430px;
+$break_iphone-375: 375px;
+$break_android-360: 360px;
+$break-2440: 2440px;
+$break-1920: 1920px;
+$break-1584: 1584px;
+$break-1271: 1271px;
+$break-1064: 1064px;
+
+@mixin from($min_width) {
+  @media screen and (min-width: $min_width) {
+    @content;
+  }
+}
+
+@mixin to($max_width) {
+  @media screen and (max-width: $max_width) {
+    @content;
+  }
+}
+
+@mixin from-to($min_width, $max_width) {
+  @media screen and (min-width: $min_width) and (max-width: $max_width) {
+    @content;
+  }
+}
+
+// buttons
+$sizeMobileBtn: 56px;
+
+//buttons-color
+$btnApprove: #4e64f6;
+
+$btnBlock: #cc111c;
+$btnBlockHover: #e6737b;
+$btnBlockActive: #990303;
+
+$btnRemove: #e55f09;
+$btnRemoveHover: #f28549;
+$btnRemoveActive: #993f03;
+
+$btnUnlock: #1ba303;
+$btnUnlockHover: #74d160;
+$btnUnlockActive: #0e6600;
+
+// oms-color-statuses
+$oms-green: #349c6a;
+
+//main content sizes
+$maxContent: 1536px;
+$defaultContent: 1224px;
+$minContent: 912px;
+
+// toasts colors
+$infoToast: #f3ebff;
+$successToast: #ebffe6;
+$errorToast: #ffe6e8;
+$warningToast: #ffeee6;
+$warningNotify: #e55f09;

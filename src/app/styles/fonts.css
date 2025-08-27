@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('NotoSans'),
+    local('NotoSans-Regular'),
+    url('public/fonts/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('NotoSans'),
+    local('NotoSans-Medium'),
+    url('public/fonts/NotoSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('NotoSans SemiBold'),
+    local('NotoSans-SemiBold'),
+    url('public/fonts/NotoSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Bitter'),
+    local('Bitter'),
+    url('public/fonts/Bitter-SemiBold.ttf') format('truetype');
+}

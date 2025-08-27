@@ -28,21 +28,22 @@ declare module "*.m.css" {
   export default classes;
 }
 
+declare module "*.module.css" {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
 declare module "*.m.scss" {
   const classes: { [key: string]: string };
   export default classes;
 }
 
-declare module "*.ttf" {
-  const value: any;
-  export default value;
-}
-declare module "*.svg" {
-  const name: string;
-  export = name;
+declare module "*.module.scss" {
+  const classes: { [key: string]: string };
+  export default classes;
 }
 
-declare module "*.png" {
+declare module "*.ttf" {
   const value: any;
   export default value;
 }

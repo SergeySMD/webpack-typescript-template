@@ -1,0 +1,74 @@
+@import 'shared/styles/theme.scss';
+
+// Layout styles
+.fullWidth {
+  width: 100%;
+}
+
+.centerContent {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.titleWithMargin {
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: $lightGray;
+}
+
+.centeredAlert {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.marginBottom24 {
+  margin-bottom: 24px;
+}
+
+// FSD layer card styles
+.layerCard {
+  border-left: 4px solid $dodgerBlue;
+  height: 100%;
+}
+
+// Advantage cards styles
+.advantageCard {
+  text-align: center;
+  height: 100%;
+}
+
+.advantageIcon {
+  font-size: 32px;
+  margin-bottom: 16px;
+  
+  &.blue {
+    color: $dodgerBlue;
+  }
+  
+  &.green {
+    color: $green;
+  }
+  
+  &.purple {
+    color: $colorBorderBtn;
+  }
+}
+
+// Responsive design
+@include to($break-768) {
+  .centerContent {
+    margin-bottom: 16px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .advantageIcon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+}

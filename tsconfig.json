@@ -1,46 +1,33 @@
 {
   "compilerOptions": {
-    "outDir": "./build",
-    "baseUrl": "./src",
-    "target": "es5",
-    "module": "esnext",
-    "types": ["node", "webpack-env"],
+    "target": "es2020",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "react",
-    "moduleResolution": "node",
-    "allowJs": false,
-    "preserveConstEnums": true,
-    "removeComments": true,
-    "sourceMap": true,
+    "allowJs": true,
     "skipLibCheck": true,
-    "strictNullChecks": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": false,
-    "resolveJsonModule": true,
-    "isolatedModules": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "downlevelIteration": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
     "paths": {
-      "@root/*": ["./*"],
-      "@api/*": ["./api/*"],
-      "@assets/*": ["./assets/*"],
-      "@components/*": ["./components/*"],
-      "@pages/*": ["./pages/*"],
-      "@styles/*": ["./styles/*"],
-      "@interfaces/*": ["./interfaces/*"],
-      "@reducers/*": ["./store/reducers/*"],
-
-      "@utils/*": ["./utils/*"]
+      "app/*": ["src/app/*"],
+      "pages/*": ["src/pages/*"],
+      "widgets/*": ["src/widgets/*"],
+      "features/*": ["src/features/*"],
+      "shared/*": ["src/shared/*"],
+      "elk-form/*": ["src/shared/elk-libs/elk-form/*"],
+      "elk-uikit/*": ["src/shared/elk-libs/elk-uikit/*"]
     },
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.m\\.(c|sa|sc)ss$"
-        }
-      }
-    ],
+    "typeRoots": ["./node_modules/@types", "./src/shared/types"],
+    "incremental": true
   },
-  "include": ["src/**/*", "custom.d.ts"],
+  "include": ["src", "custom.d.ts"],
   "exclude": ["node_modules", "build"]
 }

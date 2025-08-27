@@ -1,0 +1,50 @@
+@use 'shared/styles/theme';
+@import './fonts.css';
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family:
+    'NotoSans',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.pdf-canvas {
+  text-align: center;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: theme.$greyMonochromeDefault;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: theme.$greyMonochromeLight;
+}
